@@ -1,9 +1,26 @@
+/*Import google*/
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400&display=swap");
+:root {
+  /*Bloque de colores*/
+  --first-color: #003358;
+  --first-color-light: #0094FF;
+  --progress-bar: #9BDAFD;
+  --white-color: #F6F6F6;
+  --z-fixed: 100;
+  --fondo: #F6F6F6;
+  --menu: #003358;
+  --icono: #0094FF;
+  --hover: #00487C;
+  --naranja: #FF9C64;
+  --verde: #3BFF95;
+  --mayor: #003358;
+  --menor: #00487C;
+}
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 a {
@@ -14,3 +31,344 @@ a {
 * {
   box-sizing: border-box;
 }
+/*Cambios generales*/
+ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+/*----------------------------------------------
+        Seccion NavBar y notificaciones
+----------------------------------------------*/
+.nav-link{
+  color: #003358;
+}
+.nav-link:hover{
+  color: #003358;
+}
+.icon.noti{
+animation: notification 2s infinite;
+}
+@keyframes notification{
+  5%{transform: rotate(10deg);}
+  10%{transform: rotate(-10deg);}
+  15%{transform: rotate(10deg);}
+  20%{transform: rotate(0deg);}
+}
+/*---------------------------------------------
+    Seccion sidebar y distribucion de sidebar
+-----------------------------------------------*/
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 95%;
+  width: 70px;
+  background: #003358;
+  margin: 1rem;
+  border-radius: 50px;
+  padding: 20px 8px;
+  z-index: 99;
+  transition: all 0.5s ease;
+}
+
+.sidebar.open {
+  width: 220px;
+  border-radius: 20px;
+}
+
+.sidebar .logo-details {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* .sidebar .logo-details img {
+  /* opacity: 0; 
+  margin-top: 8px;
+  /* transition: all 0.5s ease;
+} */
+
+.sidebar .logo-details .logo_name {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar .logo_name{
+  margin: 0px 0px 10px 10px;
+}
+
+.sidebar.open .logo-details .icon,
+.sidebar.open .logo-details .logo_name {
+  opacity: 1;
+}
+
+/* .sidebar .logo-details #btn {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: all 0.4s ease;
+  font-size: 23px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.sidebar.open .logo-details #btn {
+  text-align: right;
+} */
+
+.sidebar i {
+  margin-top: 6px;
+  color: #fff;
+  height: 50px;
+  min-width: 50px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 50px;
+}
+/*Barra entera de botones*/
+.sidebar .nav-list {
+  margin-top: 1vh;
+  /* margin-bottom: 10px; */
+  height: 70%;
+}
+.nav-list .iconMenu{
+  transition: 1s;
+  margin-left: 20px;
+}
+/*------------------------------------------
+Tamaño de cada unidad dentro de la barra
+------------------------------------------*/
+/* @media only screen and (max-width: 1450px) {
+  .sidebar li {
+    position: relative;
+    margin: .5rem 0;
+    list-style: none;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .sidebar li {
+    position: relative;
+    margin: 1rem 2px;
+    list-style: none;
+  }
+}
+@media only screen and (max-height: 780px) and (min-height: 650px)  {
+  /*.sidebar li img {
+     height: 35px !important;
+    width: 35px !important; */
+    /* margin-top: 0.35rem !important;
+    margin-right: 10px !important;
+  }
+  .sidebar li i{
+    height: 48px !important;
+  }
+  .sidebar li {
+    margin: 0.5rem 3px !important;
+  }
+  .sidebar li a:hover {
+    /* background: var(--hover); 
+    margin-top: 0.35rem !important;
+  }
+
+}
+@media (max-height: 650px) {
+  .sidebar li img {
+    height: 30px !important;
+    width: 30px !important;
+    margin-top: 0.35rem !important;
+  }
+  .sidebar li i{
+    height: 45px !important;
+  }
+  .sidebar li {
+    margin: 0.5rem 5px !important;
+  }
+  .sidebar li.libx {
+    margin: 0.5rem 1px !important;
+  }
+  
+  .sidebar li a:hover {
+    /* background: var(--hover); 
+    margin-top: 0.35rem !important;
+  }
+}
+@media (max-height: 600px) {
+    .sidebar{
+      visibility: hidden !important;
+    }
+} */
+
+.sidebar li .tooltip {
+  position: absolute;
+  margin-top: -4.5vh;
+  left: calc(100% + 15px);
+  z-index: 3;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 6px 12px;
+  border-radius: 7px;
+  border-style: ridge;
+  border-width: 1px;
+  border-color: #0094FF;
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: 0s;
+}
+
+.sidebar li:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+  top: auto;
+  transform: translateY(-50%);
+}
+
+.sidebar.open li .tooltip {
+  display: none;
+}
+
+/* .sidebar input {
+  font-size: 15px;
+  color: #FFF;
+  font-weight: 400;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  width: 50px;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+  background: #1d1b31;
+}
+
+.sidebar.open input {
+  padding: 0 20px 0 50px;
+  width: 100%;
+} */
+
+.sidebar li a {
+  display: flex;
+  margin-top: 3px;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  background: #003358;
+}
+
+.sidebar li a:hover {
+  background: var(--hover);
+}
+.sidebar li a.active{
+    background: #00487C;
+    color: white;
+    /* text-shadow: 2px 2px 4px #000000; */
+  }
+  .sidebar li a.active .links_name,
+.sidebar li a.active i {
+  transition: all 0.5s ease;
+  color: white;
+  /* width: 40px;
+  height: 40px; */
+  
+}
+
+.sidebar li a .links_name {
+  margin: 0px 0px 10px 10px;
+  padding-top: 1vh;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+}
+
+.sidebar.open li a .links_name {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sidebar li a:hover .links_name,
+.sidebar li a:hover i {
+  transition: all 0.5s ease;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.sidebar li i {
+  height: 45px;
+  line-height: 45px;
+  padding-top: 4px;
+  margin-left: 2px;
+  font-size: 18px;
+  border-radius: 12px;
+}
+
+
+/* .sidebar li Image {
+  height: 45px;
+  width: 45px;
+  object-fit: scale-down;
+  border-radius: 0px;
+  margin-top: 0.2rem;
+  display: block;
+  margin-left: auto;
+  margin-right: 15px;
+} */
+
+/*-------------------------------
+            Contenedor
+  -------------------------------*/
+  .fullBackgroud {
+    position: relative;
+    background: #F6F6F6;
+    min-height: 99vh;
+    top: 0;
+    left: 0px;
+    width: 100%;
+    /* transition: all 0.5s ease;
+    z-index: 1; */
+  }
+  
+  #navBar {
+    width: calc(100%);
+    margin-left: 5px;
+    transition: 0.7s;
+  }
+  #navBar.open {
+    width: calc(100% - 150px);
+    margin-left: 150px;
+    transition: 0.7s;
+  }
+  .contenedor {
+    width: calc(100%);
+    height: 92vh;
+    margin-left: 0px;
+    padding-left: 100px;
+    padding-right: 20px;
+    transition: 0.5s;
+  }
+  .contenedor.open {
+    width: calc(100% - 150px);
+    margin-left: 150px;
+    transition: 0.5s;
+  }
+  /*Elementos adicionales globales card*/
+  .card{
+    background-color: #FFFFFF;
+    box-shadow: 15px 15px 31px rgba(0, 0, 0, 0.04);
+    border-radius: 20px;
+    padding: 0.5rem;
+  }
