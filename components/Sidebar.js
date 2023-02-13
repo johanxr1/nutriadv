@@ -15,6 +15,10 @@ import iAcompanamientosO from "/public/sidebar/icon-acompanamientos.svg";
 
 export default function Sidebar(props) {
   const [menu, setMenu] = useState(aMenu);
+  const [open, setOpen] = useState(false);
+  const handleClick = () => {
+    setOpen(!open);
+  };
 
   const abrirMenu = () => {
     if (document.getElementById("sidebarMenu").classList.contains("open")) {
@@ -31,7 +35,7 @@ export default function Sidebar(props) {
   };
   return (
     <>
-      <div id="sidebarMenu" className="sidebar ">
+      <div id="sidebarMenu" className={`sidebar ${open ? "open" : ""}`}>
         <div className="logo-details">
           <i className="">
             <Image src={logoff} width={35} height={42} />
@@ -39,7 +43,7 @@ export default function Sidebar(props) {
           <div className="logo_name">NutriApp</div>
         </div>
         <ul className="nav-list">
-          <li onClick={abrirMenu}>
+          <li handleClick={handleClick}>
             <i className="iconMenu">
               <Image className="" src={menu} />
             </i>
